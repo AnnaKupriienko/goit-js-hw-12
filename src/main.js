@@ -67,7 +67,7 @@ function hideLoadmoreBtn(data) {
 function smoothScroll() {
     const heightItem = galleryContainer.firstElementChild.getBoundingClientRect().height;
     window.scrollBy({
-        top: 3*heightItem,
+        top: 2 * heightItem,
         behavior: "smooth",
     });
 }
