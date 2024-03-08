@@ -38,7 +38,7 @@ function onLoadMore(){
     searchImages(searchQuery, currentPage).then(data => {
             totalHits = data.totalHits;
         const markup = createMarkup(data)
-  galleryContainer.insertAdjacentHTML('beforeend', markup)
+        galleryContainer.insertAdjacentHTML('beforeend', markup)
         lightbox.refresh()
         hideLoadmoreBtn(data)
      }).catch(error => console.log(error))

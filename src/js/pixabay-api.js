@@ -18,8 +18,6 @@ export async function searchImages(searchQuery, currentPage) {
         per_page: perPage,
     })
     loader.style.display = 'block';
-
-
     try {
         const response = await axios.get(`${BaseUrl}?${params}`);
         if (!response === 200) {
@@ -27,18 +25,6 @@ export async function searchImages(searchQuery, currentPage) {
         }
         const data = response.data;
         loader.style.display = 'none';
-        if (data.hits.length === 0) {
-            iziToast.error({
-                title: 'Error',
-                fontSize: 'large',
-                close: false,
-                position: 'topRight',
-                messageColor: 'white',
-                timeout: 2000,
-                backgroundColor: 'red',
-                message: 'Sorry, there are no images matching your search query. Please try again!',
-            });
-        }
         return data;
     }
     catch (error) {
