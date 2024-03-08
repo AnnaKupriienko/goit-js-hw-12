@@ -20,7 +20,6 @@ const lightbox = new SimpleLightbox('.gallery-link', {
 
 form.addEventListener("submit", onSubmit);
 loadMoreBtn.addEventListener('click', onLoadMore);
-
 function onSubmit(event) {
     event.preventDefault();
     galleryContainer.innerHTML = "";
@@ -34,7 +33,6 @@ function onSubmit(event) {
             hideLoadmoreBtn(data)
      }).catch(error => console.log(error))
 }
-
 function onLoadMore(){
     currentPage++;
     searchImages(searchQuery, currentPage).then(data => {
@@ -64,10 +62,7 @@ function hideLoadmoreBtn(data) {
         }
         else {
             createMarkup(data)
-        }
-        
-    }
-    
+        }}
 }
 function smoothScroll() {
     const heightItem = galleryContainer.firstElementChild.getBoundingClientRect().height;
